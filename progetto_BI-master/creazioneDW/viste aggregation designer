@@ -1,0 +1,266 @@
+<list>
+  <string>1.0</string>
+  <org.pentaho.di.core.database.DatabaseMeta>  &lt;connection&gt;&#xd;
+    &lt;name&gt;connection_dw&lt;/name&gt;&#xd;
+    &lt;server&gt;127.0.0.1&lt;/server&gt;&#xd;
+    &lt;type&gt;MYSQL&lt;/type&gt;&#xd;
+    &lt;access&gt;Native&lt;/access&gt;&#xd;
+    &lt;database&gt;progetto_bi_dw&lt;/database&gt;&#xd;
+    &lt;port&gt;3306&lt;/port&gt;&#xd;
+    &lt;username&gt;root&lt;/username&gt;&#xd;
+    &lt;password&gt;Encrypted 2be98afc86aa7b58dbe0aab60ce97f682&lt;/password&gt;&#xd;
+    &lt;servername/&gt;&#xd;
+    &lt;data_tablespace/&gt;&#xd;
+    &lt;index_tablespace/&gt;&#xd;
+    &lt;attributes&gt;&#xd;
+      &lt;attribute&gt;&lt;code&gt;FORCE_IDENTIFIERS_TO_LOWERCASE&lt;/code&gt;&lt;attribute&gt;N&lt;/attribute&gt;&lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&lt;code&gt;FORCE_IDENTIFIERS_TO_UPPERCASE&lt;/code&gt;&lt;attribute&gt;N&lt;/attribute&gt;&lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&lt;code&gt;PORT_NUMBER&lt;/code&gt;&lt;attribute&gt;3306&lt;/attribute&gt;&lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&lt;code&gt;PRESERVE_RESERVED_WORD_CASE&lt;/code&gt;&lt;attribute&gt;N&lt;/attribute&gt;&lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&lt;code&gt;QUOTE_ALL_FIELDS&lt;/code&gt;&lt;attribute&gt;N&lt;/attribute&gt;&lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&lt;code&gt;STREAM_RESULTS&lt;/code&gt;&lt;attribute&gt;Y&lt;/attribute&gt;&lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&lt;code&gt;SUPPORTS_BOOLEAN_DATA_TYPE&lt;/code&gt;&lt;attribute&gt;N&lt;/attribute&gt;&lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&lt;code&gt;SUPPORTS_TIMESTAMP_DATA_TYPE&lt;/code&gt;&lt;attribute&gt;N&lt;/attribute&gt;&lt;/attribute&gt;&#xd;
+    &lt;/attributes&gt;&#xd;
+  &lt;/connection&gt;&#xd;
+</org.pentaho.di.core.database.DatabaseMeta>
+  <org.pentaho.aggdes.ui.ext.impl.MondrianFileSchemaModel>
+    <schemaChecksum>3530796824</schemaChecksum>
+    <mondrianSchemaFilename>C:\Users\giuse\Desktop\progetto_BI\progetto_bi.xml</mondrianSchemaFilename>
+    <cubeName>noleggio_auto</cubeName>
+  </org.pentaho.aggdes.ui.ext.impl.MondrianFileSchemaModel>
+  <org.pentaho.aggdes.ui.model.impl.AggListImpl>
+    <aggregation>
+      <algoAgg>false</algoAgg>
+      <name>nome autonoleggio e modello</name>
+      <description></description>
+      <attributes>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt_automobile].[modello]</label>
+          <table>dt_automobile</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt_autonoleggio].[nome autonoleggio]</label>
+          <table>dt_autonoleggio</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+      </attributes>
+      <output class="org.pentaho.aggdes.output.impl.AggregateTableOutput">
+        <tableName>nome_autonoleggio_e_modello</tableName>
+        <aggregate class="org.pentaho.aggdes.ui.model.impl.UIAggregateImpl" reference="../.."/>
+        <columns>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_automobile_modello</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_autonoleggio_nome_autonoleg</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[2]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_noleggio_auto_MPG_medio</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure">
+              <label>ft_noleggio_auto.MPG medio</label>
+              <table>ft_noleggio_auto</table>
+            </attribute>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_noleggio_auto_carburante_me</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure">
+              <label>ft_noleggio_auto.carburante medio</label>
+              <table>ft_noleggio_auto</table>
+            </attribute>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_noleggio_auto_distanza_chil</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure">
+              <label>ft_noleggio_auto.distanza chilometri medi</label>
+              <table>ft_noleggio_auto</table>
+            </attribute>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_noleggio_auto_costo_assicur</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure">
+              <label>ft_noleggio_auto.costo assicurazione medio</label>
+              <table>ft_noleggio_auto</table>
+            </attribute>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_noleggio_auto_eta_media_cli</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure">
+              <label>ft_noleggio_auto.eta media clienti</label>
+              <table>ft_noleggio_auto</table>
+            </attribute>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_noleggio_auto_importo_pagat</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure">
+              <label>ft_noleggio_auto.importo pagato medio</label>
+              <table>ft_noleggio_auto</table>
+            </attribute>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_noleggio_auto_numero_client</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure">
+              <label>ft_noleggio_auto.numero clienti</label>
+              <table>ft_noleggio_auto</table>
+            </attribute>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_noleggio_auto_numero_nolegg</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure">
+              <label>ft_noleggio_auto.numero noleggi</label>
+              <table>ft_noleggio_auto</table>
+            </attribute>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_noleggio_auto_sconto_medio</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure">
+              <label>ft_noleggio_auto.sconto medio</label>
+              <table>ft_noleggio_auto</table>
+            </attribute>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_noleggio_auto_importo_tasse</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure">
+              <label>ft_noleggio_auto.importo tasse medio</label>
+              <table>ft_noleggio_auto</table>
+            </attribute>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_noleggio_auto_fact_count</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure">
+              <label>ft_noleggio_auto.fact_count</label>
+              <table>ft_noleggio_auto</table>
+            </attribute>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+        </columns>
+      </output>
+      <measures>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[3]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[4]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[5]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[6]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[7]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[8]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[9]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[10]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[11]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[12]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[13]/attribute"/>
+      </measures>
+      <enabled>true</enabled>
+      <estimateRowCount>175857.85396503867</estimateRowCount>
+      <estimateSpace>7034314.158601547</estimateSpace>
+    </aggregation>
+    <aggregation>
+      <algoAgg>false</algoAgg>
+      <name>progetto_b_noleggio_a_1</name>
+      <description></description>
+      <attributes>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute reference="../../../aggregation/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt_temporale].[mese]</label>
+          <table>dt_temporale</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt_citta].[stato]</label>
+          <table>dt_citta</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt_citta].[contea]</label>
+          <table>dt_citta</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt_citta].[id_città]</label>
+          <table>dt_citta</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+      </attributes>
+      <output class="org.pentaho.aggdes.output.impl.AggregateTableOutput">
+        <tableName>progetto_b_noleggio_a_1</tableName>
+        <aggregate class="org.pentaho.aggdes.ui.model.impl.UIAggregateImpl" reference="../.."/>
+        <columns>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_automobile_modello</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../../aggregation/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_temporale_mese</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[2]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_citta_stato</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[3]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_citta_contea</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[4]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_citta_id_città</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[5]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_noleggio_auto_MPG_medio</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[3]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_noleggio_auto_carburante_me</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[4]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_noleggio_auto_distanza_chil</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[5]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_noleggio_auto_costo_assicur</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[6]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_noleggio_auto_eta_media_cli</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[7]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_noleggio_auto_importo_pagat</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[8]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_noleggio_auto_numero_client</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[9]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_noleggio_auto_numero_nolegg</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[10]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_noleggio_auto_sconto_medio</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[11]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_noleggio_auto_importo_tasse</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[12]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_noleggio_auto_fact_count</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[13]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+        </columns>
+      </output>
+      <measures>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[3]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[4]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[5]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[6]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[7]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[8]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[9]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[10]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[11]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[12]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[13]/attribute"/>
+      </measures>
+      <enabled>true</enabled>
+      <estimateRowCount>393794.0</estimateRowCount>
+      <estimateSpace>2.6777992E7</estimateSpace>
+    </aggregation>
+  </org.pentaho.aggdes.ui.model.impl.AggListImpl>
+</list>

@@ -1,0 +1,1805 @@
+{
+  "id": 9,
+  "name": "livello riconcliato",
+  "targetDatabase": "MySQL",
+  "current": true,
+  "created": "Feb 6, 2021, 4:59:52 PM",
+  "erdNotation": "CROWS_FOOT",
+  "snapshots": [
+    {
+      "id": 9,
+      "name": "Initial snapshot, created 06/02/2021",
+      "created": "Feb 6, 2021, 4:59:52 PM",
+      "comment": "The snapshot, created by default\n\n06/02/2021 17:03-\u003eThe Reverse Engineering was successfully performed into this Snapshot with the following connection parameters:\nDatabase Type: MySQL\nServer: 127.0.0.1\nPort: 3306\nDatabase: livello_riconciliato\nUser: root\n",
+      "defaultSnapshot": true,
+      "tables": [
+        {
+          "id": 84,
+          "name": "assicurazione",
+          "columns": [
+            {
+              "id": 752,
+              "name": "NAIC",
+              "ordinalPosition": 1,
+              "nullable": true,
+              "dataType": "bigint"
+            },
+            {
+              "id": 753,
+              "name": "Nome compagnia",
+              "ordinalPosition": 2,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "100"
+            },
+            {
+              "id": 754,
+              "name": "Reclami accettati",
+              "ordinalPosition": 3,
+              "nullable": true,
+              "dataType": "bigint"
+            },
+            {
+              "id": 755,
+              "name": "Reclami non accettati",
+              "ordinalPosition": 4,
+              "nullable": true,
+              "dataType": "bigint"
+            },
+            {
+              "id": 756,
+              "name": "Reclami totali",
+              "ordinalPosition": 5,
+              "nullable": true,
+              "dataType": "bigint"
+            },
+            {
+              "id": 757,
+              "name": "premi per iscritto",
+              "ordinalPosition": 6,
+              "nullable": true,
+              "dataType": "bigint"
+            },
+            {
+              "id": 758,
+              "name": "anno di deposito",
+              "ordinalPosition": 7,
+              "nullable": true,
+              "dataType": "bigint"
+            },
+            {
+              "id": 759,
+              "name": "id_assicurazione",
+              "ordinalPosition": 0,
+              "nullable": false,
+              "dataType": "INTEGER"
+            }
+          ],
+          "constraints": [
+            {
+              "id": 133,
+              "name": "PK_assicurazione",
+              "type": "PRIMARY_KEY"
+            }
+          ]
+        },
+        {
+          "id": 85,
+          "name": "automobile",
+          "columns": [
+            {
+              "id": 760,
+              "name": "altezza",
+              "ordinalPosition": 1,
+              "nullable": true,
+              "dataType": "bigint"
+            },
+            {
+              "id": 761,
+              "name": "lughezza",
+              "ordinalPosition": 2,
+              "nullable": true,
+              "dataType": "bigint"
+            },
+            {
+              "id": 762,
+              "name": "larghezza",
+              "ordinalPosition": 3,
+              "nullable": true,
+              "dataType": "bigint"
+            },
+            {
+              "id": 763,
+              "name": "tipologia carburante",
+              "ordinalPosition": 4,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "200"
+            },
+            {
+              "id": 764,
+              "name": "tipo cambio",
+              "ordinalPosition": 5,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "50"
+            },
+            {
+              "id": 765,
+              "name": "nome completo modello",
+              "ordinalPosition": 6,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "100"
+            },
+            {
+              "id": 766,
+              "name": "marca",
+              "ordinalPosition": 7,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "50"
+            },
+            {
+              "id": 767,
+              "name": "modello",
+              "ordinalPosition": 8,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "48"
+            },
+            {
+              "id": 768,
+              "name": "anno",
+              "ordinalPosition": 9,
+              "nullable": true,
+              "dataType": "decimal"
+            },
+            {
+              "id": 867,
+              "name": "id_automobile",
+              "ordinalPosition": 0,
+              "nullable": false,
+              "dataType": "INTEGER"
+            }
+          ],
+          "constraints": [
+            {
+              "id": 141,
+              "name": "PK_automobile",
+              "type": "PRIMARY_KEY"
+            }
+          ]
+        },
+        {
+          "id": 86,
+          "name": "autonoleggio",
+          "columns": [
+            {
+              "id": 769,
+              "name": "indirizzo",
+              "ordinalPosition": 1,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "50"
+            },
+            {
+              "id": 770,
+              "name": "id_città",
+              "ordinalPosition": 2,
+              "nullable": true,
+              "dataType": "INTEGER"
+            },
+            {
+              "id": 771,
+              "name": "id_autonoleggio",
+              "ordinalPosition": 0,
+              "nullable": false,
+              "dataType": "INTEGER"
+            },
+            {
+              "id": 772,
+              "name": "nome_autonoleggio",
+              "ordinalPosition": 3,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "50"
+            }
+          ],
+          "constraints": [
+            {
+              "id": 134,
+              "name": "PK_autonoleggio",
+              "type": "PRIMARY_KEY"
+            },
+            {
+              "id": 161,
+              "name": "Relazione autonoleggio città",
+              "type": "FOREIGN_KEY"
+            }
+          ]
+        },
+        {
+          "id": 87,
+          "name": "campagna_pub",
+          "columns": [
+            {
+              "id": 773,
+              "name": "Categoria",
+              "ordinalPosition": 2,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "63"
+            },
+            {
+              "id": 774,
+              "name": "Sotto_categoria",
+              "ordinalPosition": 3,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "63"
+            },
+            {
+              "id": 775,
+              "name": "Azienda",
+              "ordinalPosition": 4,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "63"
+            },
+            {
+              "id": 776,
+              "name": "Dominio website",
+              "ordinalPosition": 5,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "63"
+            },
+            {
+              "id": 777,
+              "name": "id_campagna",
+              "ordinalPosition": 0,
+              "nullable": false,
+              "dataType": "int"
+            },
+            {
+              "id": 869,
+              "name": "id_autonoleggio",
+              "ordinalPosition": 1,
+              "nullable": true,
+              "dataType": "INTEGER"
+            }
+          ],
+          "constraints": [
+            {
+              "id": 140,
+              "name": "PK_campagna_pub",
+              "type": "PRIMARY_KEY"
+            },
+            {
+              "id": 162,
+              "name": "relazione autonoleggio campagna pubblicitaria",
+              "type": "FOREIGN_KEY"
+            }
+          ]
+        },
+        {
+          "id": 88,
+          "name": "città",
+          "columns": [
+            {
+              "id": 778,
+              "name": "ANSICODE",
+              "ordinalPosition": 1,
+              "nullable": true,
+              "dataType": "bigint"
+            },
+            {
+              "id": 779,
+              "name": "nome",
+              "ordinalPosition": 2,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "50"
+            },
+            {
+              "id": 780,
+              "name": "id_contea",
+              "ordinalPosition": 3,
+              "nullable": true,
+              "dataType": "INTEGER"
+            },
+            {
+              "id": 781,
+              "name": "Latitudine",
+              "ordinalPosition": 4,
+              "nullable": true,
+              "dataType": "decimal"
+            },
+            {
+              "id": 782,
+              "name": "Longitudine",
+              "ordinalPosition": 5,
+              "nullable": true,
+              "dataType": "decimal"
+            },
+            {
+              "id": 783,
+              "name": "id_città",
+              "ordinalPosition": 0,
+              "nullable": false,
+              "dataType": "INTEGER"
+            }
+          ],
+          "constraints": [
+            {
+              "id": 135,
+              "name": "PK_città",
+              "type": "PRIMARY_KEY"
+            },
+            {
+              "id": 149,
+              "name": "Relazione contea-città",
+              "type": "FOREIGN_KEY"
+            }
+          ]
+        },
+        {
+          "id": 89,
+          "name": "clienti",
+          "columns": [
+            {
+              "id": 784,
+              "name": "nome",
+              "ordinalPosition": 1,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "30"
+            },
+            {
+              "id": 785,
+              "name": "congnome",
+              "ordinalPosition": 2,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "30"
+            },
+            {
+              "id": 786,
+              "name": "email",
+              "ordinalPosition": 3,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "50"
+            },
+            {
+              "id": 787,
+              "name": "genere",
+              "ordinalPosition": 4,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "6"
+            },
+            {
+              "id": 788,
+              "name": "reddito annuo",
+              "ordinalPosition": 5,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "9"
+            },
+            {
+              "id": 789,
+              "name": "id_citta_residenza",
+              "ordinalPosition": 6,
+              "nullable": true,
+              "dataType": "INTEGER"
+            },
+            {
+              "id": 790,
+              "name": "punteggio di spesa",
+              "ordinalPosition": 7,
+              "nullable": true,
+              "dataType": "bigint"
+            },
+            {
+              "id": 791,
+              "name": "data di nascita",
+              "ordinalPosition": 8,
+              "nullable": true,
+              "dataType": "datetime"
+            },
+            {
+              "id": 792,
+              "name": "id_cliente",
+              "ordinalPosition": 0,
+              "nullable": false,
+              "dataType": "INTEGER"
+            },
+            {
+              "id": 793,
+              "name": "id_licenza",
+              "ordinalPosition": 9,
+              "nullable": true,
+              "dataType": "INTEGER"
+            }
+          ],
+          "constraints": [
+            {
+              "id": 139,
+              "name": "PK_clienti",
+              "type": "PRIMARY_KEY"
+            },
+            {
+              "id": 170,
+              "name": "relazione cliente città",
+              "type": "FOREIGN_KEY"
+            },
+            {
+              "id": 172,
+              "name": "relazione cliente patente",
+              "type": "FOREIGN_KEY"
+            }
+          ]
+        },
+        {
+          "id": 90,
+          "name": "contea",
+          "columns": [
+            {
+              "id": 794,
+              "name": "contea",
+              "ordinalPosition": 1,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "50"
+            },
+            {
+              "id": 795,
+              "name": "id_stato",
+              "ordinalPosition": 2,
+              "nullable": true,
+              "dataType": "INTEGER"
+            },
+            {
+              "id": 796,
+              "name": "id_contea",
+              "ordinalPosition": 0,
+              "nullable": false,
+              "dataType": "INTEGER"
+            }
+          ],
+          "constraints": [
+            {
+              "id": 136,
+              "name": "PK_contea",
+              "type": "PRIMARY_KEY"
+            },
+            {
+              "id": 150,
+              "name": "Relazione contea stato",
+              "type": "FOREIGN_KEY"
+            }
+          ]
+        },
+        {
+          "id": 91,
+          "name": "dipendenti",
+          "columns": [
+            {
+              "id": 797,
+              "name": "email",
+              "ordinalPosition": 1,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "8"
+            },
+            {
+              "id": 798,
+              "name": "id_manager",
+              "ordinalPosition": 2,
+              "nullable": true,
+              "dataType": "INTEGER",
+              "valueLength": "3"
+            },
+            {
+              "id": 799,
+              "name": "id_dipendente",
+              "ordinalPosition": 0,
+              "nullable": false,
+              "dataType": "INTEGER"
+            },
+            {
+              "id": 800,
+              "name": "nome",
+              "ordinalPosition": 3,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "11"
+            },
+            {
+              "id": 801,
+              "name": "numero di telefono",
+              "ordinalPosition": 4,
+              "nullable": true,
+              "dataType": "bigint"
+            },
+            {
+              "id": 802,
+              "name": "data di assunzione",
+              "ordinalPosition": 5,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "9"
+            },
+            {
+              "id": 804,
+              "name": "salario",
+              "ordinalPosition": 6,
+              "nullable": true,
+              "dataType": "bigint"
+            },
+            {
+              "id": 805,
+              "name": "cognome",
+              "ordinalPosition": 7,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "11"
+            },
+            {
+              "id": 806,
+              "name": "id_autonoleggio",
+              "ordinalPosition": 8,
+              "nullable": true,
+              "dataType": "INTEGER"
+            }
+          ],
+          "constraints": [
+            {
+              "id": 138,
+              "name": "PK_dipendenti",
+              "type": "PRIMARY_KEY"
+            },
+            {
+              "id": 174,
+              "name": "relazione dipendente_manager",
+              "type": "FOREIGN_KEY"
+            },
+            {
+              "id": 177,
+              "name": "relaDipendenteAutonoleggio",
+              "type": "FOREIGN_KEY"
+            }
+          ]
+        },
+        {
+          "id": 92,
+          "name": "magazzino",
+          "columns": [
+            {
+              "id": 807,
+              "name": "Volume",
+              "ordinalPosition": 1,
+              "nullable": true,
+              "dataType": "decimal"
+            },
+            {
+              "id": 808,
+              "name": "id_magazzino",
+              "ordinalPosition": 0,
+              "nullable": false,
+              "dataType": "bigint"
+            },
+            {
+              "id": 809,
+              "name": "Score",
+              "ordinalPosition": 2,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "5"
+            },
+            {
+              "id": 810,
+              "name": "Facility",
+              "ordinalPosition": 3,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "59"
+            },
+            {
+              "id": 811,
+              "name": "Address1",
+              "ordinalPosition": 4,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "100"
+            },
+            {
+              "id": 812,
+              "name": "Address2",
+              "ordinalPosition": 5,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "100"
+            },
+            {
+              "id": 813,
+              "name": "Address3",
+              "ordinalPosition": 6,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "100"
+            },
+            {
+              "id": 814,
+              "name": "id_cities",
+              "ordinalPosition": 7,
+              "nullable": true,
+              "dataType": "INTEGER"
+            },
+            {
+              "id": 868,
+              "name": "id_autonoleggio",
+              "ordinalPosition": 8,
+              "nullable": true,
+              "dataType": "INTEGER"
+            }
+          ],
+          "constraints": [
+            {
+              "id": 137,
+              "name": "PK_magazzino",
+              "type": "PRIMARY_KEY"
+            },
+            {
+              "id": 160,
+              "name": "Relazione autonoleggio magazzino",
+              "type": "FOREIGN_KEY"
+            },
+            {
+              "id": 163,
+              "name": "relazione magazzino città",
+              "type": "FOREIGN_KEY"
+            }
+          ]
+        },
+        {
+          "id": 93,
+          "name": "noleggio auto",
+          "columns": [
+            {
+              "id": 815,
+              "name": "anno",
+              "ordinalPosition": 9,
+              "nullable": true,
+              "dataType": "int"
+            },
+            {
+              "id": 816,
+              "name": "mese",
+              "ordinalPosition": 10,
+              "nullable": true,
+              "dataType": "int"
+            },
+            {
+              "id": 817,
+              "name": "trimestre",
+              "ordinalPosition": 11,
+              "nullable": true,
+              "dataType": "int"
+            },
+            {
+              "id": 818,
+              "name": "id_cliente",
+              "ordinalPosition": 6,
+              "nullable": true,
+              "dataType": "INTEGER"
+            },
+            {
+              "id": 819,
+              "name": "id_noleggio_auto",
+              "ordinalPosition": 0,
+              "nullable": false,
+              "dataType": "INTEGER"
+            },
+            {
+              "id": 820,
+              "name": "durata_noleggio",
+              "ordinalPosition": 12,
+              "nullable": true,
+              "dataType": "int"
+            },
+            {
+              "id": 821,
+              "name": "id_locazione_ritiro",
+              "ordinalPosition": 1,
+              "nullable": true,
+              "dataType": "INTEGER"
+            },
+            {
+              "id": 822,
+              "name": "id_assicurazione",
+              "ordinalPosition": 8,
+              "nullable": true,
+              "dataType": "INTEGER"
+            },
+            {
+              "id": 823,
+              "name": "giorno_dell_anno_numero",
+              "ordinalPosition": 13,
+              "nullable": true,
+              "dataType": "int"
+            },
+            {
+              "id": 824,
+              "name": "giorno_del_mese_numero",
+              "ordinalPosition": 14,
+              "nullable": true,
+              "dataType": "int"
+            },
+            {
+              "id": 825,
+              "name": "giorno nome",
+              "ordinalPosition": 15,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "30"
+            },
+            {
+              "id": 826,
+              "name": "mese nome",
+              "ordinalPosition": 16,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "30"
+            },
+            {
+              "id": 827,
+              "name": "trimestre nome",
+              "ordinalPosition": 17,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "2"
+            },
+            {
+              "id": 828,
+              "name": "data completa",
+              "ordinalPosition": 18,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "63"
+            },
+            {
+              "id": 829,
+              "name": "settimana",
+              "ordinalPosition": 19,
+              "nullable": true,
+              "dataType": "int"
+            },
+            {
+              "id": 830,
+              "name": "id_auto",
+              "ordinalPosition": 5,
+              "nullable": true,
+              "dataType": "INTEGER"
+            },
+            {
+              "id": 831,
+              "name": "id_locazione_consegna",
+              "ordinalPosition": 2,
+              "nullable": true,
+              "dataType": "INTEGER"
+            },
+            {
+              "id": 832,
+              "name": "trimestre numero",
+              "ordinalPosition": 20,
+              "nullable": true,
+              "dataType": "int"
+            },
+            {
+              "id": 833,
+              "name": "id_dipendente",
+              "ordinalPosition": 4,
+              "nullable": true,
+              "dataType": "INTEGER"
+            },
+            {
+              "id": 834,
+              "name": "id_pagamento",
+              "ordinalPosition": 3,
+              "nullable": true,
+              "dataType": "INTEGER"
+            },
+            {
+              "id": 872,
+              "name": "id_opzioni_fluido",
+              "ordinalPosition": 7,
+              "nullable": true,
+              "dataType": "INTEGER"
+            }
+          ],
+          "constraints": [
+            {
+              "id": 142,
+              "name": "PK_noleggio auto",
+              "type": "PRIMARY_KEY"
+            },
+            {
+              "id": 151,
+              "name": "Relazione noleggio_auto-città",
+              "type": "FOREIGN_KEY"
+            },
+            {
+              "id": 152,
+              "name": "Relazione noleggio_auto-dipendente",
+              "type": "FOREIGN_KEY"
+            },
+            {
+              "id": 154,
+              "name": "Relazione noleggio_auto-automobile",
+              "type": "FOREIGN_KEY"
+            },
+            {
+              "id": 156,
+              "name": "relazione noleggioAuto_Pagamento",
+              "type": "FOREIGN_KEY"
+            },
+            {
+              "id": 157,
+              "name": "Relazione noleggioAuto_città",
+              "type": "FOREIGN_KEY"
+            },
+            {
+              "id": 158,
+              "name": "Relazione noleggioAuto_assicurazione",
+              "type": "FOREIGN_KEY"
+            },
+            {
+              "id": 159,
+              "name": "Relazione noleggioAuto_cliente",
+              "type": "FOREIGN_KEY"
+            },
+            {
+              "id": 173,
+              "name": "relazione noleggioA opzioni fluido",
+              "type": "FOREIGN_KEY"
+            }
+          ]
+        },
+        {
+          "id": 94,
+          "name": "opzioni fluido",
+          "columns": [
+            {
+              "id": 835,
+              "name": "veicolo",
+              "ordinalPosition": 1,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "50"
+            },
+            {
+              "id": 836,
+              "name": "carburante",
+              "ordinalPosition": 2,
+              "nullable": true,
+              "dataType": "bigint"
+            },
+            {
+              "id": 837,
+              "name": "chilometri percorsi",
+              "ordinalPosition": 3,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "7"
+            },
+            {
+              "id": 838,
+              "name": "MPG",
+              "ordinalPosition": 4,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "9"
+            },
+            {
+              "id": 839,
+              "name": "tipo",
+              "ordinalPosition": 5,
+              "nullable": true,
+              "dataType": "char",
+              "valueLength": "1"
+            },
+            {
+              "id": 840,
+              "name": "id_opzioni_fluido",
+              "ordinalPosition": 0,
+              "nullable": false,
+              "dataType": "INTEGER"
+            }
+          ],
+          "constraints": [
+            {
+              "id": 143,
+              "name": "PK_opzioni fluido",
+              "type": "PRIMARY_KEY"
+            }
+          ]
+        },
+        {
+          "id": 95,
+          "name": "pagamento",
+          "columns": [
+            {
+              "id": 842,
+              "name": "noleggio_auto",
+              "ordinalPosition": 1,
+              "nullable": true,
+              "dataType": "int"
+            },
+            {
+              "id": 843,
+              "name": "costo_totale_assicurazione",
+              "ordinalPosition": 2,
+              "nullable": true,
+              "dataType": "int"
+            },
+            {
+              "id": 844,
+              "name": "tasse sul servizio",
+              "ordinalPosition": 3,
+              "nullable": true,
+              "dataType": "int"
+            },
+            {
+              "id": 845,
+              "name": "VAT",
+              "ordinalPosition": 4,
+              "nullable": true,
+              "dataType": "int"
+            },
+            {
+              "id": 846,
+              "name": "sconto totale",
+              "ordinalPosition": 5,
+              "nullable": true,
+              "dataType": "int"
+            },
+            {
+              "id": 847,
+              "name": "importo_netto_pagabile",
+              "ordinalPosition": 6,
+              "nullable": true,
+              "dataType": "int"
+            },
+            {
+              "id": 848,
+              "name": "id_pagamento",
+              "ordinalPosition": 0,
+              "nullable": false,
+              "dataType": "INTEGER"
+            }
+          ],
+          "constraints": [
+            {
+              "id": 144,
+              "name": "PK_pagamento",
+              "type": "PRIMARY_KEY"
+            }
+          ]
+        },
+        {
+          "id": 96,
+          "name": "patente cliente",
+          "columns": [
+            {
+              "id": 849,
+              "name": "classe di patente",
+              "ordinalPosition": 1,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "30"
+            },
+            {
+              "id": 850,
+              "name": "stato",
+              "ordinalPosition": 2,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "50"
+            },
+            {
+              "id": 851,
+              "name": "privilegi",
+              "ordinalPosition": 3,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "30"
+            },
+            {
+              "id": 852,
+              "name": "anno di scadenza",
+              "ordinalPosition": 4,
+              "nullable": true,
+              "dataType": "bigint"
+            },
+            {
+              "id": 853,
+              "name": "id_patente_cliente",
+              "ordinalPosition": 0,
+              "nullable": false,
+              "dataType": "INTEGER"
+            }
+          ],
+          "constraints": [
+            {
+              "id": 145,
+              "name": "PK_patente cliente",
+              "type": "PRIMARY_KEY"
+            }
+          ]
+        },
+        {
+          "id": 97,
+          "name": "prenotazione",
+          "columns": [
+            {
+              "id": 854,
+              "name": "id_prenotazione",
+              "ordinalPosition": 0,
+              "nullable": false,
+              "dataType": "INTEGER"
+            },
+            {
+              "id": 855,
+              "name": "id_locazione_ritiro",
+              "ordinalPosition": 1,
+              "nullable": true,
+              "dataType": "INTEGER"
+            },
+            {
+              "id": 856,
+              "name": "id_locazione_restituzione",
+              "ordinalPosition": 2,
+              "nullable": true,
+              "dataType": "INTEGER"
+            },
+            {
+              "id": 857,
+              "name": "id_automobile",
+              "ordinalPosition": 3,
+              "nullable": true,
+              "dataType": "INTEGER"
+            },
+            {
+              "id": 858,
+              "name": "id_cliente",
+              "ordinalPosition": 4,
+              "nullable": true,
+              "dataType": "INTEGER"
+            }
+          ],
+          "constraints": [
+            {
+              "id": 146,
+              "name": "PK_prenotazione",
+              "type": "PRIMARY_KEY"
+            },
+            {
+              "id": 166,
+              "name": "relazione prenotazione città",
+              "type": "FOREIGN_KEY"
+            },
+            {
+              "id": 167,
+              "name": "relazione città prenotazione",
+              "type": "FOREIGN_KEY"
+            },
+            {
+              "id": 168,
+              "name": "relazione cliente prenotazione",
+              "type": "FOREIGN_KEY"
+            },
+            {
+              "id": 169,
+              "name": "relazione prenotazione automobile",
+              "type": "FOREIGN_KEY"
+            },
+            {
+              "id": 178,
+              "name": "relazionePrenotazioneAutomobile",
+              "type": "FOREIGN_KEY"
+            }
+          ]
+        },
+        {
+          "id": 98,
+          "name": "stato",
+          "columns": [
+            {
+              "id": 859,
+              "name": "stato",
+              "ordinalPosition": 1,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "50"
+            },
+            {
+              "id": 860,
+              "name": "id_stato",
+              "ordinalPosition": 0,
+              "nullable": false,
+              "dataType": "INTEGER"
+            }
+          ],
+          "constraints": [
+            {
+              "id": 147,
+              "name": "PK_stato",
+              "type": "PRIMARY_KEY"
+            }
+          ]
+        },
+        {
+          "id": 99,
+          "name": "voli",
+          "columns": [
+            {
+              "id": 861,
+              "name": "id_volo",
+              "ordinalPosition": 0,
+              "nullable": false,
+              "dataType": "bigint"
+            },
+            {
+              "id": 862,
+              "name": "TailNum",
+              "ordinalPosition": 1,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "6"
+            },
+            {
+              "id": 863,
+              "name": "origine",
+              "ordinalPosition": 2,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "3"
+            },
+            {
+              "id": 864,
+              "name": "destinazione",
+              "ordinalPosition": 3,
+              "nullable": true,
+              "dataType": "varchar",
+              "valueLength": "3"
+            },
+            {
+              "id": 865,
+              "name": "cancellato",
+              "ordinalPosition": 4,
+              "nullable": true,
+              "dataType": "bigint"
+            },
+            {
+              "id": 866,
+              "name": "deviato",
+              "ordinalPosition": 5,
+              "nullable": true,
+              "dataType": "bigint"
+            },
+            {
+              "id": 870,
+              "name": "id_prenotazione_noleggo",
+              "ordinalPosition": 6,
+              "nullable": true,
+              "dataType": "INTEGER"
+            },
+            {
+              "id": 871,
+              "name": "id_cliente",
+              "ordinalPosition": 7,
+              "nullable": true,
+              "dataType": "INTEGER"
+            }
+          ],
+          "constraints": [
+            {
+              "id": 148,
+              "name": "PK_voli",
+              "type": "PRIMARY_KEY"
+            },
+            {
+              "id": 164,
+              "name": "relazione volo prenotazione",
+              "type": "FOREIGN_KEY"
+            },
+            {
+              "id": 165,
+              "name": "relazione volo cliente",
+              "type": "FOREIGN_KEY"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "views": [
+    {
+      "id": 9,
+      "name": "Main View",
+      "comment": "The main view of the project",
+      "created": "Feb 6, 2021, 4:59:52 PM",
+      "general": true,
+      "ordinalPosition": 0,
+      "current": true,
+      "detailLevel": "DEFAULT",
+      "objectLayouts": [
+        {
+          "id": 178,
+          "objectType": "TABLE",
+          "objectName": "voli",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nwidth\u003d180.0\r\nlayoutX\u003d1310.0\r\nlayoutY\u003d1026.8\r\n"
+        },
+        {
+          "id": 179,
+          "objectType": "TABLE",
+          "objectName": "campagna_pub",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nwidth\u003d132.8\r\nlayoutX\u003d10.0\r\nlayoutY\u003d881.9999999999998\r\n"
+        },
+        {
+          "id": 180,
+          "objectType": "TABLE",
+          "objectName": "autonoleggio",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nwidth\u003d171.2\r\nlayoutX\u003d295.60000000000014\r\nlayoutY\u003d1017.1999999999999\r\n"
+        },
+        {
+          "id": 181,
+          "objectType": "TABLE",
+          "objectName": "opzioni fluido",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nwidth\u003d155.2\r\nlayoutX\u003d1190.8000000000002\r\nlayoutY\u003d145.2\r\n"
+        },
+        {
+          "id": 182,
+          "objectType": "TABLE",
+          "objectName": "assicurazione",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nwidth\u003d149.6\r\nlayoutX\u003d981.1999999999996\r\nlayoutY\u003d44.39999999999998\r\n"
+        },
+        {
+          "id": 183,
+          "objectType": "TABLE",
+          "objectName": "patente cliente",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nwidth\u003d160.8\r\nlayoutX\u003d1406.8000000000002\r\nlayoutY\u003d818.8\r\n"
+        },
+        {
+          "id": 184,
+          "objectType": "TABLE",
+          "objectName": "dipendenti",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nwidth\u003d139.2\r\nlayoutX\u003d1399.6000000000001\r\nlayoutY\u003d390.8000000000002\r\n"
+        },
+        {
+          "id": 185,
+          "objectType": "TABLE",
+          "objectName": "automobile",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nwidth\u003d153.6\r\nlayoutX\u003d421.19999999999976\r\nlayoutY\u003d690.7999999999998\r\n"
+        },
+        {
+          "id": 186,
+          "objectType": "TABLE",
+          "objectName": "contea",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nwidth\u003d112.8\r\nlayoutX\u003d253.19999999999993\r\nlayoutY\u003d321.2000000000001\r\n"
+        },
+        {
+          "id": 187,
+          "objectType": "TABLE",
+          "objectName": "magazzino",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nwidth\u003d138.4\r\nlayoutX\u003d665.1999999999998\r\nlayoutY\u003d1034.8000000000002\r\n"
+        },
+        {
+          "id": 188,
+          "objectType": "TABLE",
+          "objectName": "stato",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nwidth\u003d103.2\r\nlayoutX\u003d75.59999999999985\r\nlayoutY\u003d362.0000000000001\r\n"
+        },
+        {
+          "id": 189,
+          "objectType": "TABLE",
+          "objectName": "prenotazione",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nwidth\u003d184.0\r\nlayoutX\u003d890.8000000000002\r\nlayoutY\u003d1066.7999999999997\r\n"
+        },
+        {
+          "id": 190,
+          "objectType": "TABLE",
+          "objectName": "clienti",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nwidth\u003d139.2\r\nlayoutX\u003d1136.3999999999999\r\nlayoutY\u003d677.1999999999999\r\n"
+        },
+        {
+          "id": 191,
+          "objectType": "TABLE",
+          "objectName": "noleggio auto",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nwidth\u003d195.19999999999996\r\nlayoutX\u003d814.8\r\nlayoutY\u003d346.80000000000007\r\n"
+        },
+        {
+          "id": 192,
+          "objectType": "TABLE",
+          "objectName": "pagamento",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nwidth\u003d162.4\r\nlayoutX\u003d842.0\r\nlayoutY\u003d781.1999999999998\r\n"
+        },
+        {
+          "id": 193,
+          "objectType": "TABLE",
+          "objectName": "città",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nwidth\u003d100.0\r\nlayoutX\u003d378.0000000000003\r\nlayoutY\u003d49.200000000000045\r\n"
+        },
+        {
+          "id": 194,
+          "objectType": "RELATIONSHIP",
+          "objectName": "contea|città|id_contea|id_contea|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nrelationshipType\u003dDADS_HAND\r\nrulerX\u003d516.8\r\n"
+        },
+        {
+          "id": 195,
+          "objectType": "RELATIONSHIP",
+          "objectName": "stato|contea|id_stato|id_stato|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nrelationshipType\u003dDIRECT\r\nrulerX\u003d233.19999999999987\r\n"
+        },
+        {
+          "id": 196,
+          "objectType": "RELATIONSHIP",
+          "objectName": "città|noleggio auto|id_città|id_locazione_consegna|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nrelationshipType\u003dDIRECT\r\nrulerX\u003d792.8\r\n"
+        },
+        {
+          "id": 197,
+          "objectType": "RELATIONSHIP",
+          "objectName": "dipendenti|noleggio auto|id_dipendente|id_dipendente|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nrelationshipType\u003dDIRECT\r\nrulerX\u003d1109.9999999999998\r\n"
+        },
+        {
+          "id": 198,
+          "objectType": "RELATIONSHIP",
+          "objectName": "pagamento|noleggio auto|id_pagamento|id_pagamento|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nrelationshipType\u003dDADS_HAND\r\nrulerX\u003d1040.0\r\n"
+        },
+        {
+          "id": 199,
+          "objectType": "RELATIONSHIP",
+          "objectName": "automobile|noleggio auto|id_automobile|id_auto|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nrelationshipType\u003dDIRECT\r\nrulerX\u003d750.8\r\n"
+        },
+        {
+          "id": 200,
+          "objectType": "RELATIONSHIP",
+          "objectName": "città|noleggio auto|id_città|id_locazione_ritiro|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nrelationshipType\u003dDIRECT\r\nrulerX\u003d759.2\r\n"
+        },
+        {
+          "id": 201,
+          "objectType": "RELATIONSHIP",
+          "objectName": "assicurazione|noleggio auto|id_assicurazione|id_assicurazione|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nrelationshipType\u003dDADS_HAND\r\nrulerX\u003d784.8\r\n"
+        },
+        {
+          "id": 202,
+          "objectType": "RELATIONSHIP",
+          "objectName": "clienti|noleggio auto|id_cliente|id_cliente|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nrelationshipType\u003dDIRECT\r\nrulerX\u003d1074.8\r\n"
+        },
+        {
+          "id": 203,
+          "objectType": "RELATIONSHIP",
+          "objectName": "autonoleggio|magazzino|id_autonoleggio|id_autonoleggio|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nrelationshipType\u003dDIRECT\r\nrulerX\u003d596.3999999999999\r\n"
+        },
+        {
+          "id": 204,
+          "objectType": "RELATIONSHIP",
+          "objectName": "città|autonoleggio|id_città|id_città|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nrelationshipType\u003dDADS_HAND\r\nrulerX\u003d265.60000000000014\r\n"
+        },
+        {
+          "id": 205,
+          "objectType": "RELATIONSHIP",
+          "objectName": "autonoleggio|campagna_pub|id_autonoleggio|id_autonoleggio|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nrelationshipType\u003dDIRECT\r\nrulerX\u003d275.60000000000014\r\n"
+        },
+        {
+          "id": 206,
+          "objectType": "RELATIONSHIP",
+          "objectName": "città|magazzino|id_città|id_cities|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nrelationshipType\u003dDIRECT\r\nrulerX\u003d645.1999999999998\r\n"
+        },
+        {
+          "id": 207,
+          "objectType": "RELATIONSHIP",
+          "objectName": "clienti|voli|id_cliente|id_cliente|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nrelationshipType\u003dDADS_HAND\r\nrulerX\u003d1520.0\r\n"
+        },
+        {
+          "id": 208,
+          "objectType": "RELATIONSHIP",
+          "objectName": "prenotazione|voli|id_prenotazione|id_prenotazione_noleggo|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nrelationshipType\u003dDIRECT\r\nrulerX\u003d1241.2\r\n"
+        },
+        {
+          "id": 209,
+          "objectType": "RELATIONSHIP",
+          "objectName": "città|prenotazione|id_città|id_locazione_restituzione|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nrelationshipType\u003dDIRECT\r\nrulerX\u003d762.4000000000003\r\n"
+        },
+        {
+          "id": 210,
+          "objectType": "RELATIONSHIP",
+          "objectName": "automobile|prenotazione|id_automobile|id_prenotazione|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nrelationshipType\u003dDIRECT\r\nrulerX\u003d736.8\r\n"
+        },
+        {
+          "id": 211,
+          "objectType": "RELATIONSHIP",
+          "objectName": "città|prenotazione|id_città|id_locazione_ritiro|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nrelationshipType\u003dDIRECT\r\nrulerX\u003d762.4000000000003\r\n"
+        },
+        {
+          "id": 212,
+          "objectType": "RELATIONSHIP",
+          "objectName": "clienti|prenotazione|id_cliente|id_cliente|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nrelationshipType\u003dDIRECT\r\nrulerX\u003d1101.6\r\n"
+        },
+        {
+          "id": 213,
+          "objectType": "RELATIONSHIP",
+          "objectName": "città|clienti|id_città|id_citta_residenza|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nrelationshipType\u003dDIRECT\r\nrulerX\u003d885.2\r\n"
+        },
+        {
+          "id": 214,
+          "objectType": "RELATIONSHIP",
+          "objectName": "patente cliente|clienti|id_patente_cliente|id_licenza|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nrelationshipType\u003dDIRECT\r\nrulerX\u003d1341.2\r\n"
+        },
+        {
+          "id": 215,
+          "objectType": "RELATIONSHIP",
+          "objectName": "opzioni fluido|noleggio auto|id_opzioni_fluido|id_opzioni_fluido|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nrelationshipType\u003dDIRECT\r\nrulerX\u003d1088.0\r\n"
+        },
+        {
+          "id": 216,
+          "objectType": "RELATIONSHIP",
+          "objectName": "dipendenti|dipendenti|id_dipendente|id_manager|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nrightRulerX\u003d1568.8000000000002\r\nrelationshipType\u003dHAT\r\ncenterRulerY\u003d10.0\r\nleftRulerX\u003d35.59999999999985\r\n"
+        },
+        {
+          "id": 217,
+          "objectType": "RELATIONSHIP",
+          "objectName": "dipendenti|autonoleggio|id_dipendente|id_autonoleggio|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:06:58 CET 2021\r\nrelationshipType\u003dDIRECT\r\nrulerX\u003d957.6000000000003\r\n"
+        },
+        {
+          "id": 218,
+          "objectType": "RELATIONSHIP",
+          "objectName": "autonoleggio|dipendenti|id_autonoleggio|id_autonoleggio|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nrelationshipType\u003dDIRECT\r\nrulerX\u003d937.2\r\n"
+        },
+        {
+          "id": 219,
+          "objectType": "RELATIONSHIP",
+          "objectName": "automobile|prenotazione|id_automobile|id_automobile|",
+          "objectLayout": "#CanvasAllocationItem\r\n#Sat Feb 06 19:09:12 CET 2021\r\nrelationshipType\u003dDIRECT\r\nrulerX\u003d736.8\r\n"
+        }
+      ]
+    }
+  ]
+}<-------------------------------------------------------->{
+  "relationships": [
+    {
+      "parentConstraintId": 133,
+      "childConstraintId": 158
+    },
+    {
+      "parentConstraintId": 141,
+      "childConstraintId": 154
+    },
+    {
+      "parentConstraintId": 141,
+      "childConstraintId": 169
+    },
+    {
+      "parentConstraintId": 141,
+      "childConstraintId": 178
+    },
+    {
+      "parentConstraintId": 134,
+      "childConstraintId": 160
+    },
+    {
+      "parentConstraintId": 134,
+      "childConstraintId": 162
+    },
+    {
+      "parentConstraintId": 134,
+      "childConstraintId": 177
+    },
+    {
+      "parentConstraintId": 135,
+      "childConstraintId": 151
+    },
+    {
+      "parentConstraintId": 135,
+      "childConstraintId": 157
+    },
+    {
+      "parentConstraintId": 135,
+      "childConstraintId": 161
+    },
+    {
+      "parentConstraintId": 135,
+      "childConstraintId": 163
+    },
+    {
+      "parentConstraintId": 135,
+      "childConstraintId": 166
+    },
+    {
+      "parentConstraintId": 135,
+      "childConstraintId": 167
+    },
+    {
+      "parentConstraintId": 135,
+      "childConstraintId": 170
+    },
+    {
+      "parentConstraintId": 139,
+      "childConstraintId": 159
+    },
+    {
+      "parentConstraintId": 139,
+      "childConstraintId": 165
+    },
+    {
+      "parentConstraintId": 139,
+      "childConstraintId": 168
+    },
+    {
+      "parentConstraintId": 136,
+      "childConstraintId": 149
+    },
+    {
+      "parentConstraintId": 138,
+      "childConstraintId": 152
+    },
+    {
+      "parentConstraintId": 138,
+      "childConstraintId": 174
+    },
+    {
+      "parentConstraintId": 143,
+      "childConstraintId": 173
+    },
+    {
+      "parentConstraintId": 144,
+      "childConstraintId": 156
+    },
+    {
+      "parentConstraintId": 145,
+      "childConstraintId": 172
+    },
+    {
+      "parentConstraintId": 146,
+      "childConstraintId": 164
+    },
+    {
+      "parentConstraintId": 147,
+      "childConstraintId": 150
+    }
+  ],
+  "constraintColumns": [
+    {
+      "constraintId": 133,
+      "columnId": 759,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 161,
+      "columnId": 770,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 134,
+      "columnId": 771,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 140,
+      "columnId": 777,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 149,
+      "columnId": 780,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 135,
+      "columnId": 783,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 170,
+      "columnId": 789,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 139,
+      "columnId": 792,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 172,
+      "columnId": 793,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 150,
+      "columnId": 795,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 136,
+      "columnId": 796,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 174,
+      "columnId": 798,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 138,
+      "columnId": 799,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 177,
+      "columnId": 806,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 137,
+      "columnId": 808,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 163,
+      "columnId": 814,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 159,
+      "columnId": 818,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 142,
+      "columnId": 819,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 157,
+      "columnId": 821,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 158,
+      "columnId": 822,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 154,
+      "columnId": 830,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 151,
+      "columnId": 831,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 152,
+      "columnId": 833,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 156,
+      "columnId": 834,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 143,
+      "columnId": 840,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 144,
+      "columnId": 848,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 145,
+      "columnId": 853,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 146,
+      "columnId": 854,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 169,
+      "columnId": 854,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 167,
+      "columnId": 855,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 166,
+      "columnId": 856,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 178,
+      "columnId": 857,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 168,
+      "columnId": 858,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 147,
+      "columnId": 860,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 148,
+      "columnId": 861,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 141,
+      "columnId": 867,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 160,
+      "columnId": 868,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 162,
+      "columnId": 869,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 164,
+      "columnId": 870,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 165,
+      "columnId": 871,
+      "ordinalPosition": 0
+    },
+    {
+      "constraintId": 173,
+      "columnId": 872,
+      "ordinalPosition": 0
+    }
+  ]
+}

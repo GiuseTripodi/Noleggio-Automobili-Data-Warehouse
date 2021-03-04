@@ -1,0 +1,224 @@
+<Schema name="progetto_bi">
+  <Cube name="noleggio_auto" visible="true" cache="true" enabled="true">
+    <Table name="ft_noleggio_auto">
+      <AggName name="progetto_b_noleggio_a_1" ignorecase="true">
+        <AggFactCount column="ft_noleggio_auto_fact_count">
+        </AggFactCount>
+        <AggMeasure column="ft_noleggio_auto_MPG_medio" name="[Measures].[MPG medio]">
+        </AggMeasure>
+        <AggMeasure column="ft_noleggio_auto_carburante_me" name="[Measures].[carburante medio]">
+        </AggMeasure>
+        <AggMeasure column="ft_noleggio_auto_distanza_chil" name="[Measures].[distanza chilometri medi]">
+        </AggMeasure>
+        <AggMeasure column="ft_noleggio_auto_costo_assicur" name="[Measures].[costo assicurazione medio]">
+        </AggMeasure>
+        <AggMeasure column="ft_noleggio_auto_eta_media_cli" name="[Measures].[eta media clienti]">
+        </AggMeasure>
+        <AggMeasure column="ft_noleggio_auto_importo_pagat" name="[Measures].[importo pagato medio]">
+        </AggMeasure>
+        <AggMeasure column="ft_noleggio_auto_numero_client" name="[Measures].[numero clienti]">
+        </AggMeasure>
+        <AggMeasure column="ft_noleggio_auto_numero_nolegg" name="[Measures].[numero noleggi]">
+        </AggMeasure>
+        <AggMeasure column="ft_noleggio_auto_sconto_medio" name="[Measures].[sconto medio]">
+        </AggMeasure>
+        <AggMeasure column="ft_noleggio_auto_importo_tasse" name="[Measures].[importo tasse medio]">
+        </AggMeasure>
+        <AggLevel column="dt_automobile_modello" name="[automobile.modello].[modello]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dt_citta_stato" name="[autonoleggio.citt&#224;_contea_stato].[stato]" collapsed="true">
+        </AggLevel>
+      </AggName>
+    </Table>
+    <Dimension type="StandardDimension" visible="true" foreignKey="id_assicurazione" highCardinality="false" name="assicurazione">
+      <Hierarchy name="nome_compagnia" visible="true" hasAll="true" primaryKey="id_assicurazione">
+        <Table name="dt_assicurazione">
+        </Table>
+        <Level name="nome_compagnia" visible="true" table="dt_assicurazione" column="nome_compagnia" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="id_automobile" highCardinality="false" name="automobile">
+      <Hierarchy name="tipologia_carburante" visible="true" hasAll="true" primaryKey="id_automobile">
+        <Table name="dt_automobile">
+        </Table>
+        <Level name="tipologia carburante" visible="true" column="tipologia_carburante" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="modello" visible="true" hasAll="true" primaryKey="id_automobile">
+        <Table name="dt_automobile">
+        </Table>
+        <Level name="modello" visible="true" column="modello" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="tipo_cambio" visible="true" hasAll="true" primaryKey="id_automobile">
+        <Table name="dt_automobile">
+        </Table>
+        <Level name="tipo_cambio" visible="true" column="tipo_cambio" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="marca" visible="true" hasAll="true" primaryKey="id_automobile">
+        <Table name="dt_automobile">
+        </Table>
+        <Level name="marca" visible="true" column="marca" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="nome" visible="true" hasAll="true" primaryKey="id_automobile">
+        <Table name="dt_automobile">
+        </Table>
+        <Level name="nome" visible="true" column="nome" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="id_data" highCardinality="false" name="dimensione temporale">
+      <Hierarchy name="giorno nome" visible="true" hasAll="true" primaryKey="id_data">
+        <Table name="dt_temporale">
+        </Table>
+        <Level name="giorno" visible="true" column="giorno" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="nome giorno" visible="true" column="giorno_nome" nameColumn="giorno_nome" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="giorno mese" visible="true" hasAll="true" primaryKey="id_data">
+        <Table name="dt_temporale">
+        </Table>
+        <Level name="mese" visible="true" column="mese" nameColumn="mese" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="nome mese" visible="true" column="mese_nome" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="giorno" visible="true" column="giorno" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="giorno mese trimestre anno" visible="true" hasAll="true" primaryKey="id_data">
+        <Table name="dt_temporale">
+        </Table>
+        <Level name="anno" visible="true" column="anno" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="trimestre" visible="true" column="trimestre" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="mese" visible="true" column="mese" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="giorno" visible="true" column="giorno" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="id_locazione_ritiro" highCardinality="false" name="locazione_ritiro">
+      <Hierarchy name="nome" visible="true" hasAll="true" primaryKey="id_citta">
+        <Table name="dt_citta">
+        </Table>
+        <Level name="nome citt&#224;" visible="true" column="nome" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="contea_stato ritiro" visible="true" hasAll="true" primaryKey="id_citta">
+        <Table name="dt_citta">
+        </Table>
+        <Level name="stato" visible="true" column="stato" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="contea" visible="true" column="contea" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="id_locazione_consegna" highCardinality="false" name="locazione_consegna">
+      <Hierarchy name="nome" visible="true" hasAll="true" primaryKey="id_citta">
+        <Table name="dt_citta">
+        </Table>
+        <Level name="nome" visible="true" column="nome" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="contea_stato" visible="true" hasAll="true" primaryKey="id_citta">
+        <Table name="dt_citta">
+        </Table>
+        <Level name="stato" visible="true" column="stato" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="contea" visible="true" column="contea" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="id_autonoleggio" highCardinality="false" name="autonoleggio">
+      <Hierarchy name="nome autonoleggio" visible="true" hasAll="true" primaryKey="id_autonoleggio">
+        <Table name="dt_autonoleggio">
+        </Table>
+        <Level name="nome autonoleggio" visible="true" column="nome_autonoleggio" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="numero dipendenti" visible="true" hasAll="true" primaryKey="id_autonoleggio">
+        <Table name="dt_autonoleggio">
+        </Table>
+        <Level name="numero dipendenti" visible="true" column="numero_dipendenti" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="salario medio" visible="true" hasAll="true" primaryKey="id_autonoleggio">
+        <Table name="dt_autonoleggio">
+        </Table>
+        <Level name="salario medio" visible="true" column="salario_medio" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="citt&#224;_nome" visible="true" hasAll="true" primaryKey="id_autonoleggio" primaryKeyTable="dt_autonoleggio">
+        <Join leftKey="id_citta" rightKey="id_citta">
+          <Table name="dt_autonoleggio">
+          </Table>
+          <Table name="dt_citta">
+          </Table>
+        </Join>
+        <Level name="nome citt&#224;" visible="true" table="dt_citta" column="nome" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="citt&#224;_contea_stato" visible="true" hasAll="true" primaryKey="id_autonoleggio" primaryKeyTable="dt_autonoleggio">
+        <Join leftKey="id_citta" rightKey="id_citta">
+          <Table name="dt_autonoleggio">
+          </Table>
+          <Table name="dt_citta">
+          </Table>
+        </Join>
+        <Level name="stato" visible="true" table="dt_citta" column="stato" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="contea" visible="true" table="dt_citta" column="contea" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="campagna pubblicitaria azienda" visible="true" hasAll="true" primaryKey="id_autonoleggio" primaryKeyTable="dt_autonoleggio">
+        <Join leftKey="id_campagna_pubblicitaria" rightKey="id_campagna">
+          <Table name="dt_autonoleggio">
+          </Table>
+          <Table name="dt_campagna_pubblicitaria">
+          </Table>
+        </Join>
+        <Level name="azienda campagna" visible="true" table="dt_campagna_pubblicitaria" column="Azienda" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="id_campagna" visible="true" table="dt_campagna_pubblicitaria" column="id_campagna" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="campagna pubblicitaria categoria" visible="true" hasAll="true" primaryKey="id_autonoleggio" primaryKeyTable="dt_autonoleggio">
+        <Join leftKey="id_campagna_pubblicitaria" rightKey="id_campagna">
+          <Table name="dt_autonoleggio">
+          </Table>
+          <Table name="dt_campagna_pubblicitaria">
+          </Table>
+        </Join>
+        <Level name="categoria" visible="true" table="dt_campagna_pubblicitaria" column="Categoria" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="id_campagna" visible="true" table="dt_campagna_pubblicitaria" column="id_campagna" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="MPG medio" column="MPC_medio" aggregator="avg" visible="true">
+    </Measure>
+    <Measure name="carburante medio" column="carburante_medio" aggregator="avg" visible="true">
+    </Measure>
+    <Measure name="distanza chilometri medi" column="chilometri_medi" aggregator="avg" visible="true">
+    </Measure>
+    <Measure name="costo assicurazione medio" column="costo_assicurazione_medio" aggregator="avg" visible="true">
+    </Measure>
+    <Measure name="eta media clienti" column="eta_media_clienti" aggregator="avg" visible="true">
+    </Measure>
+    <Measure name="importo pagato medio" column="importo_pagato_medio" aggregator="avg" visible="true">
+    </Measure>
+    <Measure name="numero clienti" column="numero_clienti" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="numero noleggi" column="numero_noleggi" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="sconto medio" column="sconto_medio" aggregator="avg" visible="true">
+    </Measure>
+    <Measure name="importo tasse medio" column="tasse_medie" aggregator="distinct-count" visible="true">
+    </Measure>
+  </Cube>
+</Schema>
